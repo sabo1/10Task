@@ -44,8 +44,8 @@
                                         </div>
                                     </div>
                                     <ul id="js-list-msg" class="list-group px-2 pb-2 js-list-filter">
+                                        <?php $lists = ["Reports", "Analytics", "Exports","Storage"];?>
 
-                                    <?php $lists = ["Reports", "Analytics", "Exports","Storage"];?>
 
                                     <?php foreach ($lists as $list):?>
                                         <li class="list-group-item">
