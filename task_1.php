@@ -44,18 +44,15 @@
                                         </div>
                                     </div>
                                     <ul id="js-list-msg" class="list-group px-2 pb-2 js-list-filter">
+
+                                    <?php $lists = ["Reports", "Analytics", "Exports","Storage"];?>
+
+                                    <?php foreach ($lists as $list):?>
                                         <li class="list-group-item">
-                                            <span data-filter-tags="reports file">Reports</span>
+                                            <span data-filter-tags="reports file"><?php echo $list;?></span>
                                         </li>
-                                        <li class="list-group-item">
-                                            <span data-filter-tags="analytics graphs">Analytics</span>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <span data-filter-tags="export download">Export</span>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <span data-filter-tags="storage">Storage</span>
-                                        </li>
+                                        
+                                        <?php endforeach;?>
                                     </ul>
                                     <div class="filter-message js-filter-message mt-0 fs-sm"></div>
                                 </div>
