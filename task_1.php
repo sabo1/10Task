@@ -58,7 +58,7 @@
                                                 "role" => "download"
                                             ],
                                             [
-                                                "name" => "Reports", 
+                                                "name" => "Storage", 
                                                 "role" => ""
                                             ]
                                         ];
@@ -66,7 +66,9 @@
 
                                     <?php foreach ($lists as $list):?>
                                         <li class="list-group-item">
-                                            <span data-filter-tags="<?php echo $list["role"];?>">
+                                            <span data-filter-tags="
+                                            <?php echo $list["name"];?>
+                                            <?php echo $list["role"];?>">
                                             <?php echo $list["name"];?></span>
                                         </li>
                                         
