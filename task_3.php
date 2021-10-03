@@ -32,11 +32,29 @@
                     </div>
                     <div class="panel-container show">
                         <div class="panel-content">
-                            <ol class="breadcrumb page-breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Главная</a></li>
-                                <li class="breadcrumb-item"><a href="#">PHP</a></li>
-                                <li class="breadcrumb-item active">Функции</li>
+                        
+                            <?php 
+                                $menu = [
+                                    [
+                                        "top" => "Главная",
+                                        "link" => "#",
+                                    ],
+                                    [
+                                        "top" => "PHP",
+                                        "link" => "#",
+                                    ],
+                                    [
+                                        "top" => "Функции",
+                                        "link" => "",
+                                    ],
+                                ];
+                            ?>
+                        
+                            <?php foreach ($menu as $key):?>
+                            <ol class="breadcrumb page-breadcrumb">                                
+                                <li class="breadcrumb-item"><a href="<? if ($key['link']=='#'){echo $key["link"]; } ?>"><? echo $key["top"]; ?> </a></li>
                             </ol>
+                            <?php endforeach;?>
                         </div>
                     </div>
                 </div>
