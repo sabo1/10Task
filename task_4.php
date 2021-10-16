@@ -30,36 +30,54 @@
                             <button class="btn btn-panel waves-effect waves-themed" data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10" data-original-title="Fullscreen"></button>
                         </div>
                     </div>
+
+                    <?php 
+                        
+                        $panel =[
+
+                        [
+                            "title"=> "My Tasks",
+                            "span"=> "130 / 500",
+                            "bg"=> "bg-fusion-400",
+                            "style"=> "65%",
+                            "valuenow"=> "65"
+                        ],
+                        [
+                            "title"=> "Transfered",
+                            "span"=> "440 TB",
+                            "bg"=> "bg-success-500",
+                            "style"=> "34%",
+                            "valuenow"=> "34"
+                        ],
+                        [
+                            "title"=> "Bugs Squashed",
+                            "span"=> "130 / 500",
+                            "bg"=> "bg-info-400",
+                            "style"=> "77%",
+                            "valuenow"=> "77"
+                        ],
+                        [
+                            "title"=> "User Testing",
+                            "span"=> "7 days",
+                            "bg"=> "bg-primary-300",
+                            "style"=> "65%",
+                            "valuenow"=> "65"
+                        ],
+                    ];?>
+
                     <div class="panel-container show">
                         <div class="panel-content">
+                            <?php foreach ($panel as $key):?>
                             <div class="d-flex mt-2">
-                                My Tasks
-                                <span class="d-inline-block ml-auto">130 / 500</span>
+                                <? echo $key["title"];?>
+                                
+                                <span class="d-inline-block ml-auto"><? echo $key["span"];?></span>
                             </div>
                             <div class="progress progress-sm mb-3">
-                                <div class="progress-bar bg-fusion-400" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar <? echo $key["bg"];?>" role="progressbar" style="width: <? echo $key["style"];?>;" aria-valuenow="<? echo $key["valuenow"];?>" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                            <div class="d-flex">
-                                Transfered
-                                <span class="d-inline-block ml-auto">440 TB</span>
-                            </div>
-                            <div class="progress progress-sm mb-3">
-                                <div class="progress-bar bg-success-500" role="progressbar" style="width: 34%;" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="d-flex">
-                                Bugs Squashed
-                                <span class="d-inline-block ml-auto">77%</span>
-                            </div>
-                            <div class="progress progress-sm mb-3">
-                                <div class="progress-bar bg-info-400" role="progressbar" style="width: 77%;" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="d-flex">
-                                User Testing
-                                <span class="d-inline-block ml-auto">7 days</span>
-                            </div>
-                            <div class="progress progress-sm mb-g">
-                                <div class="progress-bar bg-primary-300" role="progressbar" style="width: 84%;" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                            <?php endforeach;?>
+                            
                         </div>
                     </div>
                 </div>
