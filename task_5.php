@@ -30,19 +30,62 @@
                             <button class="btn btn-panel waves-effect waves-themed" data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10" data-original-title="Fullscreen"></button>
                         </div>
                     </div>
+
+                    <?php 
+                    
+                        $man = [
+                            [
+                                "img"=> "img/demo/authors/sunny.png",
+                                "alt"=> "Sunny A.",
+                                "name"=> "Sunny A. (UI/UX Expert)",
+                                "role"=> "Lead Author",
+                                "twitter"=> "@myplaneticket",
+                                "mail"=> "@myplaneticket"
+                            ],
+                            [
+                                "img"=> "img/demo/authors/josh.png",
+                                "alt"=> "Jos K.",
+                                "name"=> "Jos K. (ASP.NET Developer)",
+                                "role"=> "Partner &amp; Contributor",
+                                "twitter"=> "@atlantez",
+                                "mail"=> "@atlantez"
+                            ],
+                            [
+                                "img"=> "img/demo/authors/jovanni.png",
+                                "alt"=> "Jovanni Lo",
+                                "name"=> "Jovanni L. (PHP Developer)",
+                                "role"=> "Partner &amp; Contributor",
+                                "twitter"=> "@lodev09",
+                                "mail"=> "@lodev09"
+                            ],
+                            [
+                                "img"=> "img/demo/authors/roberto.png",
+                                "alt"=> "Roberto R.",
+                                "name"=> "Roberto R. (Rails Developer)",
+                                "role"=> "Partner &amp; Contributor",
+                                "twitter"=> "@sildur",
+                                "mail"=> "@sildur"
+                            ],
+                        ]
+
+                    ;?>
+
                     <div class="panel-container show">
                         <div class="panel-content">
                            <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
-                            <div class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
-                                <img src="img/demo/authors/sunny.png" alt="Sunny A." class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
+                           
+                           <?php foreach ($man as $key):?>
+
+                           <div class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
+                                <img src="<? echo $key["img"];?>" alt="<? echo $key["alt"];?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
                                 <div class="ml-2 mr-3">
                                     <h5 class="m-0">
-                                        Sunny A. (UI/UX Expert)
+                                    <? echo $key["name"];?>
                                         <small class="m-0 fw-300">
-                                            Lead Author
+                                        <? echo $key["role"];?>
                                         </small>
                                     </h5>
-                                    <a href="https://twitter.com/@myplaneticket" class="text-info fs-sm" target="_blank">@myplaneticket</a> -
+                                    <a href="https://twitter.com/<? echo $key["twitter"];?>" class="text-info fs-sm" target="_blank"><? echo $key["mail"];?></a> -
                                     <a href="https://wrapbootstrap.com/user/myorange" class="text-info fs-sm" target="_blank" title="Contact Sunny"><i class="fal fa-envelope"></i></a>
                                 </div>
                             </div>
@@ -73,7 +116,7 @@
                                 </div>
                             </div>
                             <div class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
-                                <img src="img/demo/authors/roberto.png" alt="Jovanni Lo" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
+                                <img src="img/demo/authors/roberto.png" alt="Roberto R." class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
                                 <div class="ml-2 mr-3">
                                     <h5 class="m-0">
                                         Roberto R. (Rails Developer)
