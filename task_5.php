@@ -41,7 +41,8 @@
                                 "http"=> "@myplaneticket",
                                 "mail"=> "@myplaneticket",
                                 "ahref"=> "myorange",
-                                "title"=> "Contact Sunny"
+                                "title"=> "Contact Sunny",
+                                "is_active"=> true,
                             ],
                             [
                                 "src"=> "img/demo/authors/josh.png",
@@ -51,7 +52,8 @@
                                 "http"=> "@atlantez",
                                 "mail"=> "@atlantez",
                                 "ahref"=> "Walapa",
-                                "title"=> "Jos"
+                                "title"=> "Jos",
+                                "is_active"=> true,
                             ],
                             [
                                 "src"=> "img/demo/authors/jovanni.png",
@@ -61,7 +63,8 @@
                                 "http"=> "@lodev09",
                                 "mail"=> "@lodev09",
                                 "ahref"=> "@lodev09",
-                                "title"=> "Jovanni"
+                                "title"=> "Jovanni",
+                                "is_active"=> false,
                             ],
                             [
                                 "src"=> "img/demo/authors/roberto.png",
@@ -71,13 +74,17 @@
                                 "http"=> "@sildur",
                                 "mail"=> "@sildur",
                                 "ahref"=> "sildur",
-                                "title"=> "Roberto"
+                                "title"=> "Roberto",
+                                "is_active"=> false,
                             ],
                     ];?>
 
                         <div class="panel-container show">
                             <div class="panel-content">
                                 <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
+                                    <?php 
+                                        if($man)
+                                    ;?>
                                <?php foreach ($man as $key):?>
                             <div class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
                                 <img src="<? echo $key["src"];?>" alt="<? echo $key["alt"];?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
