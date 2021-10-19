@@ -41,7 +41,8 @@
                                 "http"=> "@myplaneticket",
                                 "mail"=> "@myplaneticket",
                                 "ahref"=> "myorange",
-                                "title"=> "Contact Sunny"
+                                "title"=> "Contact Sunny",
+                                "status"=> false,
                             ],
                             [
                                 "src"=> "img/demo/authors/josh.png",
@@ -51,7 +52,8 @@
                                 "http"=> "@atlantez",
                                 "mail"=> "@atlantez",
                                 "ahref"=> "Walapa",
-                                "title"=> "Jos"
+                                "title"=> "Jos",
+                                "status"=> false,
                             ],
                             [
                                 "src"=> "img/demo/authors/jovanni.png",
@@ -61,7 +63,8 @@
                                 "http"=> "@lodev09",
                                 "mail"=> "@lodev09",
                                 "ahref"=> "@lodev09",
-                                "title"=> "Jovanni"                                
+                                "title"=> "Jovanni",
+                                "status"=> true,                                
                             ],
                             [
                                 "src"=> "img/demo/authors/roberto.png",
@@ -71,17 +74,25 @@
                                 "http"=> "@sildur",
                                 "mail"=> "@sildur",
                                 "ahref"=> "sildur",
-                                "title"=> "Roberto"                        
+                                "title"=> "Roberto",
+                                "status"=> true,                        
                             ],
                     ];?>
 
+                        <style>
+                            .absent{
+                                /* background: linear-gradient(to right red, green); */
+                                opacity: .5;
+                            }
+                        </style>
+
                         <div class="panel-container show">
                             <div class="panel-content">
-                                <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3">
+                                <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3 ">
                                <?php foreach ($man as $key):?>
-                            <div class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0">
+                            <div class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0  <? echo $key ['status'] === false ? 'absent' : '';?>">
                                 <img src="<? echo $key["src"];?>" alt="<? echo $key["alt"];?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
-                                <div class="ml-2 mr-3">
+                                <div class="ml-2 mr-3 ">
                                     <h5 class="m-0">
                                     <? echo $key["name"];?>
                                         <small class="m-0 fw-300">
