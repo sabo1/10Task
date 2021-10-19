@@ -61,7 +61,7 @@
                                 "http"=> "@lodev09",
                                 "mail"=> "@lodev09",
                                 "ahref"=> "@lodev09",
-                                "title"=> "Jovanni"
+                                "title"=> "Jovanni"                                
                             ],
                             [
                                 "src"=> "img/demo/authors/roberto.png",
@@ -71,7 +71,7 @@
                                 "http"=> "@sildur",
                                 "mail"=> "@sildur",
                                 "ahref"=> "sildur",
-                                "title"=> "Roberto"
+                                "title"=> "Roberto"                        
                             ],
                     ];?>
 
