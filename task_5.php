@@ -32,7 +32,7 @@
                     </div>
 
                     <?php 
-                        $man = [
+                      /*   $man = [
                             [
                                 "src"=> "img/demo/authors/sunny.png",
                                 "alt"=> "Sunny A.",
@@ -42,7 +42,7 @@
                                 "mail"=> "@myplaneticket",
                                 "ahref"=> "myorange",
                                 "title"=> "Contact Sunny",
-                                "status"=> false,
+                                "status"=> "active",
                             ],
                             [
                                 "src"=> "img/demo/authors/josh.png",
@@ -53,7 +53,7 @@
                                 "mail"=> "@atlantez",
                                 "ahref"=> "Walapa",
                                 "title"=> "Jos",
-                                "status"=> false,
+                                "status"=> "active",
                             ],
                             [
                                 "src"=> "img/demo/authors/jovanni.png",
@@ -64,7 +64,7 @@
                                 "mail"=> "@lodev09",
                                 "ahref"=> "@lodev09",
                                 "title"=> "Jovanni",
-                                "status"=> true,                                
+                                "status"=> "passive",                                
                             ],
                             [
                                 "src"=> "img/demo/authors/roberto.png",
@@ -75,9 +75,33 @@
                                 "mail"=> "@sildur",
                                 "ahref"=> "sildur",
                                 "title"=> "Roberto",
-                                "status"=> true,                        
+                                "status"=> "passive",                        
                             ],
-                    ];?>
+                    ]; */
+                    
+                    //здесь вывел без id базы данных
+                    /* echo '<pre>';
+                        print_r($man);die;
+                    echo '</pre>'; */
+                    //задачи
+                    // 1. Подключиться к базе данных
+                    $pdo = new PDO("mysql:host=localhost;dbname=rahimcourseoctober", "root", "");
+                    // 2. Сформировать запрос
+                    $sql = "SELECT * FROM man";
+                    // 3. Выполнить запрос
+                    $statement = $pdo->prepare($sql);
+                    $statement->execute();
+                    /* echo '<pre>';
+                        print_r($statement->fetchAll(PDO::FETCH_ASSOC));die;
+                    echo '</pre>'; */
+                    // 4. Получить свои данные
+                    $man = $statement->fetchAll(PDO::FETCH_ASSOC);
+                    
+                    // В итоге что было сделано
+                    // 1. Создал БД со всеми пчп проектами, где они пресутсвуют. Например, <?php echo["Название "];здесь нет ничего и после вопроса двоеточие не должно быть;?;>
+                    // В итоге что было сделано
+
+                    ?>
 
                         <style>
                             .absent{
@@ -91,7 +115,7 @@
                             <div class="panel-content">
                                 <div class="d-flex flex-wrap demo demo-h-spacing mt-3 mb-3 ">
                                <?php foreach ($man as $key):?>
-                            <div class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0  <? echo $key ['status'] === false ? 'absent' : '';?>">
+                            <div class="rounded-pill bg-white shadow-sm p-2 border-faded mr-3 d-flex flex-row align-items-center justify-content-center flex-shrink-0  <? echo $key ['status'] === 'active' ? 'absent' : '';?>">
                             <!-- echo $key ['status']  если равняеться == в false то выводим ? 'absent' иначе : '' в кавычках пустота ; -->
                                 <img src="<? echo $key["src"];?>" alt="<? echo $key["alt"];?>" class="img-thumbnail img-responsive rounded-circle" style="width:5rem; height: 5rem;">
                                 <div class="ml-2 mr-3 ">
