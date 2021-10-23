@@ -30,6 +30,38 @@
                             <button class="btn btn-panel waves-effect waves-themed" data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10" data-original-title="Fullscreen"></button>
                         </div>
                     </div>
+
+                    <?php
+                        // 1. с фио разобраться
+                        // 2. кнопки 
+                        // 3. циклы
+                        // 
+                       /*  $usual_table = [
+
+                            [
+                                "row"=> "1",
+                                "name"=> "Mark",
+                                "surname"=>"Otto",
+                                "username"=>"@mdo",
+                                // "show"=>"show.php?id=5",
+                                // "info"=>"btn-info",
+                                // "red"=>"Редактировать",
+                                // "edit"=>"edit.php?id=5",
+                                // "warning"=>"btn-warning",
+                                // "change"=>"Изменить",
+                                // "delete"=>"delete.php?id=5",
+                                // "danger"=>"btn-danger",
+                                // "del"=>"Удалить",
+                            ]
+                        ] */
+
+                        $pdo = new PDO("mysql:host=localhost;dbname=rahimcourseseptember", "root", "");
+                        $sql = "SELECT * FROM usual_table";
+                        $statement = $pdo->prepare($sql);
+                        $statement->execute();
+                        $usual_table = $statement->fetchAll(PDO:FETCH_ASSOC);
+                    ?>
+
                     <div class="panel-container show">
                         <div class="panel-content">
                             <h5 class="frame-heading">
@@ -46,19 +78,22 @@
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
+
+                                    <?php foreach ($usual_table as $key): ?>
+
                                     <tbody>
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
+                                            <th scope="row"><? echo $key["row"];?></th>
+                                            <td><? echo $key["name"];?></td>
+                                            <td><? echo $key["surname"];?></td>
+                                            <td><? echo $key["username"];?></td>
                                             <td>
-                                                <a href="show.php?id=" class="btn btn-info">Редактировать</a>
-                                                <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
-                                                <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
+                                                <a href="show.php?id=5" class="btn btn-info">Редактировать</a>
+                                                <a href="edit.php?id=5" class="btn btn-warning">Изменить</a>
+                                                <a href="delete.php?id=5" class="btn btn-danger">Удалить</a>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <!-- <tr>
                                             <th scope="row">2</th>
                                             <td>Jacob</td>
                                             <td>Thornton</td>
@@ -90,8 +125,11 @@
                                                 <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
                                                 <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
                                             </td>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
+
+                                        <?php endforeach;?>
+
                                 </table>
                             </div>
                         </div>
