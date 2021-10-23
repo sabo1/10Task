@@ -32,34 +32,13 @@
                     </div>
 
                     <?php
-                        // 1. с фио разобраться
-                        // 2. кнопки 
-                        // 3. циклы
-                        // 
-                       /*  $usual_table = [
-
-                            [
-                                "row"=> "1",
-                                "name"=> "Mark",
-                                "surname"=>"Otto",
-                                "username"=>"@mdo",
-                                // "show"=>"show.php?id=5",
-                                // "info"=>"btn-info",
-                                // "red"=>"Редактировать",
-                                // "edit"=>"edit.php?id=5",
-                                // "warning"=>"btn-warning",
-                                // "change"=>"Изменить",
-                                // "delete"=>"delete.php?id=5",
-                                // "danger"=>"btn-danger",
-                                // "del"=>"Удалить",
-                            ]
-                        ] */
+                       
 
                         $pdo = new PDO("mysql:host=localhost;dbname=rahimcourseseptember", "root", "");
                         $sql = "SELECT * FROM usual_table";
                         $statement = $pdo->prepare($sql);
                         $statement->execute();
-                        $usual_table = $statement->fetchAll(PDO:FETCH_ASSOC);
+                        $usual_table = $statement->fetchAll(PDO::FETCH_ASSOC);
                     ?>
 
                     <div class="panel-container show">
@@ -93,39 +72,7 @@
                                                 <a href="delete.php?id=5" class="btn btn-danger">Удалить</a>
                                             </td>
                                         </tr>
-                                        <!-- <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            <td>
-                                                <a href="show.php?id=" class="btn btn-info">Редактировать</a>
-                                                <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
-                                                <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                            <td>
-                                                <a href="show.php?id=" class="btn btn-info">Редактировать</a>
-                                                <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
-                                                <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">4</th>
-                                            <td>Larry the Bird</td>
-                                            <td> Bird</td>
-                                            <td>@twitter</td>
-                                            <td>
-                                                <a href="show.php?id=" class="btn btn-info">Редактировать</a>
-                                                <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
-                                                <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
-                                            </td>
-                                        </tr> -->
+                                      
                                     </tbody>
 
                                         <?php endforeach;?>
