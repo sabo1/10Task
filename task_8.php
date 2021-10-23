@@ -36,6 +36,8 @@
 
                         $pdo = new PDO("mysql:host=localhost;dbname=rahimcourseseptember", "root", "");
                         $sql = "SELECT * FROM usual_table";
+                        // можно и так написать, меньше строк и с маленькими буквами
+                        // $statement = $pdo->prepare("select * from usual_table");
                         $statement = $pdo->prepare($sql);
                         $statement->execute();
                         $usual_table = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -57,19 +59,24 @@
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
-
-                                    <?php foreach ($usual_table as $key): ?>
-
+                            
                                     <tbody>
-                                        <tr>
+
+                                        <?php foreach ($usual_table as $key): ?>
+                                        
+                                            <tr>
+                                                <!-- здесь можно row не писать и в базу не добавлять, просто брать из id, написать echo $key["id"]; -->
                                             <th scope="row"><? echo $key["row"];?></th>
                                             <td><? echo $key["name"];?></td>
                                             <td><? echo $key["surname"];?></td>
                                             <td><? echo $key["username"];?></td>
                                             <td>
-                                                <a href="show.php?id=5" class="btn btn-info">Редактировать</a>
-                                                <a href="edit.php?id=5" class="btn btn-warning">Изменить</a>
-                                                <a href="delete.php?id=5" class="btn btn-danger">Удалить</a>
+                                                <!-- задание 
+                                                    добавить файлы как внизу в ahref 3 файла с адресами 
+                                                я просто цифры написал, а в решений надо писать echo $key["id"];-->
+                                                <a href="show.php?id=<? echo $key["id"];?>" class="btn btn-info">Редактировать</a>
+                                                <a href="edit.php?id=<? echo $key["id"];?>" class="btn btn-warning">Изменить</a>
+                                                <a href="delete.php?id=<? echo $key["id"];?>" class="btn btn-danger">Удалить</a>
                                             </td>
                                         </tr>
                                       
